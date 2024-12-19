@@ -1,5 +1,5 @@
 # Vertical Federated XGBoost
-This example shows how to use vertical federated learning with [NVIDIA FLARE](https://nvflare.readthedocs.io/en/main/index.html) on tabular data.
+This project implements Vertical Federated Learning using XGBoost, designed to operate with [NVIDIA FLARE](https://nvflare.readthedocs.io/en/main/index.html) on tabular data.
 Here we use the optimized gradient boosting library [XGBoost](https://github.com/dmlc/xgboost) and leverage its federated learning support.
 
 Before starting please make sure you set up a [virtual environment](../../README.md#set-up-a-virtual-environment) and install the additional requirements:
@@ -8,8 +8,8 @@ python3 -m pip install -r requirements.txt
 ```
 
 ## Data
-We conduct classification task for fraud based on the data from bank and telecompany, which each has 31 features and 1 class label on the bank side.
-site-1 is the bank data, and site-2 is the data from the telecompany
+We conduct a classification task for fraud detection based on data from a bank and a telecommunication company, each with 31 features and 1 class label on the bank side. 
+site-1 contains the bank data, while site-2 contains data from the telecommunication company.
 
 
 ## Vertical XGBoost Federated Learning with FLARE
