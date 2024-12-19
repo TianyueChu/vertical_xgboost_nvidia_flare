@@ -20,7 +20,8 @@ For integrating with FLARE, we can use the predefined `XGBFedController` to run 
 
 Next, we can use `FedXGBHistogramExecutor` and set XGBoost training parameters in `config_fed_client.json`, or define new training logic by overwriting the `xgb_train()` method.
 
-Lastly, we must subclass `XGBDataLoader` and implement the `load_data()` method. For vertical federated learning, it is important when creating the `xgb.Dmatrix` to set `data_split_mode=1` for column mode, and to specify the presence of a label column `?format=csv&label_column=0` for the csv file. To support PSI, the dataloader can also read in the dataset based on the calculated intersection, and split the data into training and validation.
+Lastly, we must subclass `XGBDataLoader` and implement the `load_data()` method. For vertical federated learning, it is important when creating the `xgb.Dmatrix` to set `data_split_mode=1` for column mode, and to specify the presence of a label column `?format=csv&label_column=0` for the csv file. 
+The dataset is then split into training and validation sets using an 4:1 ratio.
 
 > **_NOTE:_** For secure mode, make sure to provide the required certificates for the federated communicator.
 
